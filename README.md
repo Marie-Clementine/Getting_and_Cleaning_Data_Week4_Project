@@ -11,6 +11,6 @@
 ###     step 4: Appropriately labels the data set with descriptive variable names.
 ###     step 5: From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
    
-### This repository also contains a codebook, "CodeBook.md" describing all the variables of the data and how the data was cleaned.  
+### This repository also contains a codebook, "CodeBook" describing all the variables of the data and how the data was cleaned.  
 
 

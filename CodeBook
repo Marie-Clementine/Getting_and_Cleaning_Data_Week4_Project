@@ -2,7 +2,7 @@
 
 This file is a code book describing the data in the submitted tidy "FinalData" set
 The tidy data has 180 rows x 88 columns
-It describes the data collected from 30 subjects/groups 
+It describes the data collected from 30 subjects during 6 activities. The data was recorded using a smartphone each subject was wearing on the waist. 
 The labels describng the new clear names given to the different variables (columns) in the tidy "FinalData" set are:
 The "code" column was renamed "activity". It shows all the different activities evaluated. All the data from each activity is in one row.
 The numbers in the first column represents the different subjects IDs.   

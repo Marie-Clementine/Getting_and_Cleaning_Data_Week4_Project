@@ -1,0 +1,15 @@
+# CodeBook
+
+## This file is a code book describing the data in the submitted tidy "FinalData" set
+## The tidy data has 180 rows x 88 columns
+## It describes the data collected from 30 subjects/groups 
+## The labels describng the new clear names given to the different variables (columns) in the tidy "FinalData" set are:
+ ### The "code" column was renamed "activity". It shows all the different activities evaluated. All the data from each activity is in one row.
+ ### The numbers in the first column represents the different subjects.   
+ ### All the abbreviations in the variable names were replaced by full names as follow:
+ ### 't' has been replaced by "Time"
+ ### 'BodyBody' was renamed simply "Body"
+ ### 'Mag' was renamed "Magnitude"
+ ### 'f' was replaced by "Frequency"
+ ### 'Acc' was renamed "Accelerometer"
+ ### 'Gyro' was renamed "Gyroscope"

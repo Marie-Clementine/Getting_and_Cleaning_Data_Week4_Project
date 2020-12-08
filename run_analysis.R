@@ -8,7 +8,7 @@ if (!file.exists(filename)){
         download.file(fileURL, filename, method = "curl")
 }
 
-# Unzipping the datafile
+# Extracting the datafile and saving it in a new file 'UCI HAR Dataset'
 
 if (!file.exists("UCI HAR Dataset")) { 
         unzip(filename) 
@@ -17,7 +17,7 @@ if (!file.exists("UCI HAR Dataset")) {
 
 library(dplyr)
 
-# Assigning all data frames
+# Assigning all data to corresponding variables
 
 features <- read.table("UCI HAR Dataset/features.txt", col.names = c("n","functions"))
 activities <- read.table("UCI HAR Dataset/activity_labels.txt", col.names = c("code", "activity"))
@@ -39,16 +39,16 @@ Subject <- rbind(subject_train, subject_test)
 Merged_Data <- cbind(Subject, Y, X)
 
 ## 2. Extracting only the measurements on the mean and standard 
-##    deviation for each measurement
+##    deviation for each measurement. Only the 'subject' and 'code' columns are selected.
 
 TidyData <- Merged_Data %>% select(subject, code, contains("mean"), contains("std"))
 
 ## 3. Using descriptive activity names to name the activities 
-##    in the data set
+##    in the data set. The numbers in the code column are replaced with the names of activities
 
 TidyData$code <- activities[TidyData$code, 2]
 
-## 4. Labelling the data set with descriptive variable names
+## 4. Labelling the data set with descriptive variable names. All abbreviated variable names are reeplaced by their full names.
 
 names(TidyData)[2] = "activity"
 names(TidyData)<-gsub("Acc", "Accelerometer", names(TidyData))
@@ -72,11 +72,11 @@ FinalData <- TidyData %>%
         summarise_all(funs(mean))
 write.table(FinalData, "FinalData.txt", row.name=FALSE)
 
-##  Checking variable names in the final tidy data set
+##  Checking the variable names in the final tidy data set
 
 str(FinalData)
 
-## Let's take a look at the tidy final data set
+## Printing the tidy final data set
 
 FinalData 
 
